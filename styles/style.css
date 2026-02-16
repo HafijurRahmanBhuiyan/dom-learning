@@ -1,0 +1,28 @@
+h2{
+    color: aqua;
+}
+
+.bg-color{
+    background-color: antiquewhite;
+}
+.font{
+    font-weight: bolder;
+    text-align: center;
+}
+
+.new{
+    transition: transform 1s ease-in-out ;
+}
+
+.new:hover{
+    transform: scale(1.5) rotate(45deg);
+    cursor: pointer;
+}
+
+.section-style{
+    border: 2px solid greenyellow;
+    margin-bottom: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: aquamarine;
+}
