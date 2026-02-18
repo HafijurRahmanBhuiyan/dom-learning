@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Keyboard</title>
+    <style>
+        .btn-mouseenter{
+            background-color: crimson;
+            color: white;
+            font-weight: bold;
+            transition: transform 0.2s ease-in-out ;
+            transform: scale(0.95);
+            cursor: pointer;
+        }
+        .btn-mouseout{
+            transition: transform 0.2s ease-in-out ;
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body>
+    <h1 id="name">Hi I am Sohan</h1>
+    <input type="text" id="new-name" placeholder="Your Name">
+    <input type="text" id="email" placeholder="Your Email"><br><br>
+    <button id="btn-change-name">Change Name</button>
+
+
+    <script>
+        document.getElementById('btn-change-name')
+            .addEventListener('click', function(){
+                const newName = document.getElementById('new-name').value;
+                if(newName !== ''){
+                    document.getElementById('name').innerText = `Hi I am`+ ' ' + newName;
+                }
+                document.getElementById('new-name').value = '';
+            })
+        document.getElementById('btn-change-name')
+            .addEventListener('mouseenter',function(){
+                const bgColor = document.getElementById('btn-change-name');
+                bgColor.classList.add('btn-mouseenter');
+                bgColor.classList.remove('btn-mouseout');
+            })   
+        document.getElementById('btn-change-name')
+            .addEventListener('mouseout',function(){
+                const bgColor = document.getElementById('btn-change-name');
+                bgColor.classList.remove('btn-mouseenter');
+                bgColor.classList.add('btn-mouseout');
+            })  
+/*
+        document.getElementById('new-name')
+            .addEventListener('focus',function(){
+                console.log('Write your name');
+            })
+        document.getElementById('new-name')
+            .addEventListener('blur',function(){
+                console.log('Mouse out');
+            })
+        document.getElementById('email')
+            .addEventListener('focus',function(){
+                console.log('Write your email');
+            })
+        document.getElementById('email')
+            .addEventListener('blur',function(){
+                console.log('mouse out');
+            })
+*/
+
+/*
+        document.getElementById('new-name')
+            .addEventListener('keydown',function(event){
+                console.log('Typing',event.target.value);
+            })
+*/
+
+        document.getElementById('new-name')
+            .addEventListener('keyup',function(event){
+                console.log(event.target.value);
+            })
+
+    </script>
+</body>
+</html>
