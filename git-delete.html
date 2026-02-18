@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Delete</title>
+</head>
+<body>
+    <h1 id="name">Hi I am Hafiz</h1>
+    <input type="text" id="input-delete" placeholder="Write Delete">
+    <button id="btn-delete" disabled>Delete</button>
+    <button id="btn-undo" disabled>Undo</button>
+
+
+    <script>
+        document.getElementById('input-delete')
+            .addEventListener('keyup',function(event){
+                const text = event.target.value;
+                const btnDelete = document.getElementById('btn-delete');
+                if(text === 'delete'){
+                    btnDelete.removeAttribute('disabled');
+                }
+                else{
+                    btnDelete.setAttribute('disabled',true);
+                }
+            })
+        document.getElementById('btn-delete')
+            .addEventListener('click',function(){
+                const name = document.getElementById('name');
+                name.style.display = 'none';
+                const undoBtn = document.getElementById('btn-undo')
+                undoBtn.removeAttribute('disabled');
+            })
+        document.getElementById('btn-undo')
+            .addEventListener('click',function(){
+                const name = document.getElementById('name');
+                name.style.display = 'block';
+                const undoBtn = document.getElementById('btn-undo')
+                undoBtn.setAttribute('disabled',true);
+            })
+    </script>
+</body>
+</html>
